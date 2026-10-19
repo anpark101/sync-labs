@@ -1,1 +1,1 @@
-# mangaball-komikku-enhanced
+# sync labs
