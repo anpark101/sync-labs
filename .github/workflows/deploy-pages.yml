@@ -1,10 +1,9 @@
 name: Deploy to GitHub Pages
 
-# Publishes the app to https://anpark101.github.io/for-au/ once two things are true:
-#   1. Repository → Settings → Pages → Build and deployment → Source: GitHub Actions
-#   2. This workflow file exists on the default branch (main) — the github-pages
-#      environment only allows deployments from main.
-# From then on, every push to main rebuilds and republishes automatically.
+# Publishes the app to https://anpark101.github.io/for-au/.
+# Repository → Settings → Pages → Source must be "GitHub Actions"; the github-pages
+# environment also only allows deployments from the default branch, so this workflow
+# lives on main and every push there rebuilds and republishes.
 
 on:
   push:
