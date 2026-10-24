@@ -698,6 +698,13 @@
 .guide-end p { max-width: 52ch; font-size: 12px; line-height: 1.65; }
 .guide-end .btn { margin-top: 4px; }
 
+/* iOS zooms any control under 16px on focus — keep the studio calm on a phone */
+@media (max-width: 720px) {
+  .input, .textarea, .select, input, textarea, select { font-size: 16px; }
+  .input.sm { font-size: 15px; }
+  .field .label, .settings-field > label { font-size: 10.5px; }
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 1080px) {
   .editor-layout { grid-template-columns: 1fr; gap: 20px; }
@@ -846,4 +853,8 @@
   .screen-thumb-cover em { display: none; }
   .screen-thumb-cover { padding: 3px 5px; }
   .screen-thumb-badge { max-width: calc(100% - 46px); overflow: hidden; white-space: nowrap; }
+}
+
+@media (max-width: 720px) {
+  .textarea { min-height: 132px; }
 }

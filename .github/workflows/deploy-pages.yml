@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - arena/417c59fe-for-au
   workflow_dispatch:
 
 permissions:

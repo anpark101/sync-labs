@@ -218,7 +218,7 @@ main { flex: 1; }
 
 /* ---------- forms ---------- */
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-2); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-2); display: flex; align-items: baseline; justify-content: space-between; gap: 4px 10px; flex-wrap: wrap; line-height: 1.35; }
 .label .hint { font-weight: 400; color: var(--muted); font-size: 10.5px; }
 .input, .textarea, .select {
   width: 100%; min-height: 44px; padding: 10px 12px;
