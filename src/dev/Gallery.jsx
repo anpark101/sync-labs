@@ -33,7 +33,9 @@ const KEYS = [
 ]
 
 const project = buildDemoProject()
-const only = new URLSearchParams(location.search).get('only')
+const params = new URLSearchParams(location.search)
+const only = params.get('only')
+const theme = params.get('theme')
 const list = only ? KEYS.filter(([p, t]) => `${p}/${t}` === only) : KEYS
 
 const screens = list.map(([platformId, type], i) => ({
@@ -42,7 +44,7 @@ const screens = list.map(([platformId, type], i) => ({
   type,
   title: `${platformId} · ${type}`,
   data: makeScreenData(platformId, type, project),
-  design: {},
+  design: theme ? { theme } : {},
 }))
 
 createRoot(document.getElementById('root')).render(

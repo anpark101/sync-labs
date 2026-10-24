@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStudioTheme, castMapOf } from '../useTheme.js'
 import { Avatar, Icon, RichText } from '../ui.jsx'
+import { XReply, XRepost, XShare } from '../glyphs.jsx'
 import { XHandle, XMedia, XName, XNav, XTopBar } from './Bits.jsx'
 import { cn, compact } from '../../lib/util.js'
 
@@ -18,7 +19,7 @@ export default function XThread({ project, screen, data }) {
           {posts.map((p, i) => (
             <div className={cn('x-thread-post', i < posts.length - 1 && 'connected')} key={p.id || i}>
               <div className="x-thread-rail">
-                <Avatar src={author?.avatar} name={author?.name} size={38} />
+                <Avatar src={author?.avatar} name={author?.name} size={40} />
                 {i < posts.length - 1 ? <span className="x-thread-line" /> : null}
               </div>
               <div className="x-thread-content">
@@ -36,10 +37,11 @@ export default function XThread({ project, screen, data }) {
                   {p.likes ? <><span className="x-dot">·</span><span>{compact(p.likes)} <em>Likes</em></span></> : null}
                 </div>
                 <div className="x-thread-actions">
-                  <span><Icon.comment size={16} />{p.replies ? ` ${compact(p.replies)}` : ''}</span>
-                  <span><Icon.share size={16} />{p.reposts ? ` ${compact(p.reposts)}` : ''}</span>
-                  <span><Icon.heart size={16} />{p.likes ? ` ${compact(p.likes)}` : ''}</span>
-                  <span><Icon.bookmark size={16} /></span>
+                  <span><XReply size={17} />{p.replies ? ` ${compact(p.replies)}` : ''}</span>
+                  <span><XRepost size={17} />{p.reposts ? ` ${compact(p.reposts)}` : ''}</span>
+                  <span><Icon.heart size={17} />{p.likes ? ` ${compact(p.likes)}` : ''}</span>
+                  <span><Icon.bookmark size={17} /></span>
+                  <span><XShare size={17} /></span>
                 </div>
               </div>
             </div>

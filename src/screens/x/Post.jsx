@@ -2,6 +2,7 @@ import React from 'react'
 import { useStudioTheme, castMapOf } from '../useTheme.js'
 import { Avatar, Icon, RichText } from '../ui.jsx'
 import { XActions, XHandle, XMedia, XName, XNav, XTopBar } from './Bits.jsx'
+import { XReply, XRepost, XShare } from '../glyphs.jsx'
 import { cn, compact, formatCount } from '../../lib/util.js'
 
 export default function XPost({ project, screen, data }) {
@@ -69,8 +70,10 @@ export default function XPost({ project, screen, data }) {
                     </div>
                     <p>{r.text}</p>
                     <div className="x-reply-actions">
-                      <span><Icon.comment size={15} /> {r.replies ? compact(r.replies) : ''}</span>
+                      <span><XReply size={15} /> {r.replies ? compact(r.replies) : ''}</span>
+                      <span><XRepost size={15} /></span>
                       <span><Icon.heart size={15} /> {r.likes ? compact(r.likes) : ''}</span>
+                      <span><XShare size={15} /></span>
                     </div>
                   </div>
                 </div>
