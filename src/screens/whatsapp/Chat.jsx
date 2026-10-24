@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStudioTheme, castMapOf } from '../useTheme.js'
 import { Avatar, Img, mediaSrc } from '../ui.jsx'
+import { WaLock } from '../glyphs.jsx'
 import { cn } from '../../lib/util.js'
 
 const WAVE = [6, 12, 9, 17, 22, 14, 10, 19, 25, 16, 8, 13, 21, 26, 12, 7, 15, 22, 18, 10, 24, 28, 15, 8]
@@ -53,7 +54,7 @@ export default function WhatsAppChat({ project, screen, data }) {
         <div className="wa-thread">
           {data.showEncryption !== false ? (
             <div className="wa-encrypt">
-              <span>🔒</span> Messages and calls are end-to-end encrypted. Only people in this chat can read, listen to, or share them.
+        <WaLock size={13} /> Messages and calls are end-to-end encrypted. Only people in this chat can read, listen to, or share them.
             </div>
           ) : null}
           <div className="wa-day"><span>{data.dayLabel || 'TODAY'}</span></div>

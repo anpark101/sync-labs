@@ -38,7 +38,7 @@ export default function SpotifyNowPlaying({ project, screen, data }) {
           {data.cover ? (
             <img src={mediaSrc(data.cover)} alt="" draggable={false} />
           ) : (
-            <div className="sp-art-empty" style={{ background: gradientFor(data.title || data.artist || 'spotify') }}>
+            <div className="sp-art-empty" style={{ background: 'linear-gradient(150deg, color-mix(in srgb, var(--sp-accent) 72%, #fff 8%), #141414)' }}>
               <span className="sp-art-rings" aria-hidden="true" />
               <span className="sp-art-mono serif">{initials(data.title || data.artist || 'now playing')}</span>
             </div>
@@ -73,7 +73,7 @@ export default function SpotifyNowPlaying({ project, screen, data }) {
 
         <div className="sp-controls">
           <span className="sp-ctrl small">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="m16 4 4 4-4 4M20 8H7a4 4 0 0 0-4 4M8 20l-4-4 4-4M4 16h13a4 4 0 0 0 4-4" /></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16.5 3.5 20 7l-3.5 3.5M3.5 7h4.2c2 0 3.4 1.1 4.7 3s3.1 4.6 5.3 4.6h2.3M16.5 11.2 20 14.7l-3.5 3.5M3.5 18.5h4.2c1.5 0 2.6-.4 3.6-1.3" /></svg>
           </span>
           <span className="sp-ctrl">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h2.3v16H6zM9.6 12 19 4.5v15L9.6 12Z" /></svg>
@@ -85,7 +85,7 @@ export default function SpotifyNowPlaying({ project, screen, data }) {
             <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M15.7 4H18v16h-2.3zM5 4.5 14.4 12 5 19.5v-15Z" /></svg>
           </span>
           <span className="sp-ctrl small">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M17 2v6H7M7 22v-6h10" /><path d="M4 9V7a3 3 0 0 1 3-3M20 15v2a3 3 0 0 1-3 3" /></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6.4 5.4h11.2a3 3 0 0 1 3 3v3.2M17.6 18.6H6.4a3 3 0 0 1-3-3v-3.2" /><path d="m8.2 2.6-2.8 2.8 2.8 2.8M15.8 21.4l2.8-2.8-2.8-2.8" /></svg>
           </span>
         </div>
 
@@ -102,13 +102,6 @@ export default function SpotifyNowPlaying({ project, screen, data }) {
         </div>
       </div>
 
-      {data.showNav !== false ? (
-        <div className="sp-nav">
-          <span className="active"><svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2.5 10v11h6.6v-6.6h5.8V21h6.6V10L12 3Z" /></svg><em>Home</em></span>
-          <span><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><circle cx="11" cy="11" r="7" /><path d="m20 20-4.2-4.2" strokeLinecap="round" /></svg><em>Search</em></span>
-          <span><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 4h5v5H4zM4 15h5v5H4z" /><path d="M14 4h6v6h-6z" /><path d="M14 15h6v5h-6z" /></svg><em>Your Library</em></span>
-        </div>
-      ) : null}
     </div>
   )
 }

@@ -2,19 +2,16 @@ import React from 'react'
 import { useStudioTheme, castMapOf } from '../useTheme.js'
 import { Avatar, Icon, RichText, Verified, mediaSrc } from '../ui.jsx'
 import { XMedia, XNav } from './Bits.jsx'
+import { XRepost, XShare } from '../glyphs.jsx'
 import { cn, compact } from '../../lib/util.js'
 
 const MiniActions = ({ p }) => (
   <div className="x-mini-actions">
     <span><Icon.comment size={16} />{p.replies ? compact(p.replies) : ''}</span>
-    <span><Icon.share size={16} />{p.reposts ? compact(p.reposts) : ''}</span>
+    <span><XRepost size={16} />{p.reposts ? compact(p.reposts) : ''}</span>
     <span><Icon.heart size={16} />{p.likes ? compact(p.likes) : ''}</span>
     <span><Icon.bookmark size={16} /></span>
-    <span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 16V3M8 7l4-4 4 4M4 14v5.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V14" />
-      </svg>
-    </span>
+    <span><XShare size={16} /></span>
   </div>
 )
 
@@ -27,6 +24,7 @@ export default function XProfile({ project, screen, data }) {
   const banner = data.banner
   return (
     <div className={cn('app x-app x-profile-app', dark && 'is-dark')}>
+      <div className="x-profile-scroll">
       <div className="x-banner">
         {banner ? (
           <img src={mediaSrc(banner)} alt="" draggable={false} />
@@ -45,7 +43,6 @@ export default function XProfile({ project, screen, data }) {
         </div>
       </div>
 
-      <div className="x-profile-scroll">
         <div className="x-profile-avatar-row">
           <span className="x-profile-avatar"><Avatar src={author?.avatar} name={author?.name} size={78} /></span>
           <span className={cn('x-follow-btn', data.showFollowing && 'following')}>
@@ -71,7 +68,7 @@ export default function XProfile({ project, screen, data }) {
         </div>
 
         <div className="x-profile-tabs">
-          {['Posts', 'Replies', 'Media', 'Likes'].map((t, i) => (
+          {['Posts', 'Replies', 'Highlights', 'Media', 'Likes'].map((t, i) => (
             <span key={t} className={i === 0 ? 'active' : ''}>{t}</span>
           ))}
         </div>

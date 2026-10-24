@@ -12,6 +12,9 @@ import {
   siYoutube,
 } from 'simple-icons'
 import { cn, gradientFor } from '../lib/util.js'
+import {
+  Heart, Bookmark, More, IgComment, IgShare, IgHome, IgSearch, IgReels, XShare, TtShare,
+} from './glyphs.jsx'
 
 const BASE = import.meta.env.BASE_URL || '/'
 
@@ -77,8 +80,11 @@ export function Verified({ color = '#0095f6', size = 13, variant = 'circle' }) {
   }
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-label="Verified" className="verified">
-      <path fill={color} d="M12 1.5 15 3l3.4-.6 1.7 3L23 7.5l-1 3 1 3-2.9 2.1-1.7 3L15 18l-3 1.5L9 18l-3.4.6-1.7-3L1 13.5l1-3-1-3 2.9-2.1 1.7-3L9 3z" />
-      <path fill="#fff" d="m7.7 12.2 2.7 2.7 5.9-6.2-1.4-1.3-4.6 4.8-1.3-1.3z" />
+      <path
+        fill={color}
+        d="M12 1.4 14.3 3.5l2.9-.6 1.3 2.7 2.7 1.3-.6 2.9 2.1 2.2-2.1 2.2.6 2.9-2.7 1.3-1.3 2.7-2.9-.6L12 22.6l-2.2-2.1-2.9.6-1.3-2.7-2.7-1.3.6-2.9-2.1-2.2 2.1-2.2-.6-2.9 2.7-1.3L6.9 3l2.9.6L12 1.4Z"
+      />
+      <path fill="#fff" d="m7.6 12.3 2.7 2.6 6-6.2-1.4-1.3-4.6 4.8-1.3-1.3-1.4 1.4Z" />
     </svg>
   )
 }
@@ -238,60 +244,30 @@ export function ScreenPlaceholder({ label }) {
 }
 
 export const Icon = {
-  heart: ({ size = 24, color = 'currentColor', filled = false }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={filled ? color : 'none'} stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.2l7.8-7.7 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" />
-    </svg>
-  ),
-  comment: ({ size = 24, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.3 9.3 0 0 1-4-.9L3 21l1.9-4.4a8.4 8.4 0 1 1 16.1-5.1Z" />
-    </svg>
-  ),
-  share: ({ size = 24, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m22 2-7 20-4-9-9-4 20-7Z" />
-    </svg>
-  ),
-  bookmark: ({ size = 24, color = 'currentColor', filled = false }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={filled ? color : 'none'} stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" />
-    </svg>
-  ),
-  more: ({ size = 24, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden="true">
-      <circle cx="5" cy="12" r="1.9" /><circle cx="12" cy="12" r="1.9" /><circle cx="19" cy="12" r="1.9" />
-    </svg>
-  ),
-  home: ({ size = 24, color = 'currentColor', filled = false }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={filled ? color : 'none'} stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 10.2 12 3l9 7.2V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.8Z" />
-    </svg>
-  ),
-  search: ({ size = 24, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.9" strokeLinecap="round">
-      <circle cx="11" cy="11" r="7" /><path d="m20 20-4.2-4.2" />
-    </svg>
-  ),
-  reels: ({ size = 24, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="5" /><path d="m3.5 8.5 17 0M8 3.2 11 8.5M14 3.2l3 5.3" /><path d="m11 12.4 4.2 2.5-4.2 2.5v-5Z" fill={color} stroke="none" />
-    </svg>
-  ),
+  heart: ({ size = 24, color = 'currentColor', filled = false }) => <Heart size={size} color={color} filled={filled} />,
+  comment: ({ size = 24, color = 'currentColor', strokeWidth = 1.7 }) => <IgComment size={size} color={color} strokeWidth={strokeWidth} />,
+  share: ({ size = 24, color = 'currentColor', strokeWidth = 1.7 }) => <IgShare size={size} color={color} strokeWidth={strokeWidth} />,
+  send: ({ size = 22, color = 'currentColor', strokeWidth = 1.7 }) => <IgShare size={size} color={color} strokeWidth={strokeWidth} />,
+  bookmark: ({ size = 24, color = 'currentColor', filled = false }) => <Bookmark size={size} color={color} filled={filled} />,
+  more: ({ size = 24, color = 'currentColor' }) => <More size={size} color={color} />,
+  home: ({ size = 24, color = 'currentColor', filled = false }) => <IgHome size={size} color={color} filled={filled} />,
+  search: ({ size = 24, color = 'currentColor' }) => <IgSearch size={size} color={color} />,
+  reels: ({ size = 24, color = 'currentColor' }) => <IgReels size={size} color={color} />,
   play: ({ size = 24, color = 'currentColor' }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5Z" /></svg>
   ),
   music: ({ size = 20, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M9 18V5l11-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="17" cy="16" r="3" />
     </svg>
   ),
-  send: ({ size = 20, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
+  back: ({ size = 24, color = 'currentColor' }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M15 4.5 7.5 12l7.5 7.5" />
     </svg>
   ),
-  back: ({ size = 24, color = 'currentColor' }) => <Chevron dir="left" size={size} color={color} />,
+  xShare: ({ size = 20, color = 'currentColor' }) => <XShare size={size} color={color} />,
+  ttShare: ({ size = 26, color = 'currentColor' }) => <TtShare size={size} color={color} />,
 }
 
 export const BottomNav = ({ tabs = [], active = 0, variant = 'light', avatar, extra }) => (

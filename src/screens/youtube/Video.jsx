@@ -67,10 +67,6 @@ export default function YouTubeVideo({ project, screen, data }) {
             Share
           </span>
           <span className="yt-chip">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12a8 8 0 1 1 2.4 5.7L4 20l1.4-3.7A8 8 0 0 1 4 12Z" /></svg>
-            Remix
-          </span>
-          <span className="yt-chip">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 19h16" /></svg>
             Download
           </span>
@@ -124,7 +120,7 @@ export default function YouTubeVideo({ project, screen, data }) {
       <div className="yt-nav">
         <span className="active"><Icon.home size={22} filled /><em>Home</em></span>
         <span>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"><path d="m13.5 2-8 12h6l-1 8 8-12h-6l1-8Z" /></svg>
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="6.2" y="2.4" width="11.6" height="19.2" rx="5.8" /><path d="m10.6 8.6 5 3.4-5 3.4V8.6Z" fill="currentColor" stroke="none" /></svg>
           <em>Shorts</em>
         </span>
         <span className="yt-create"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg></span>

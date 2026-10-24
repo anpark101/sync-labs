@@ -31,8 +31,8 @@ export default function InstagramDM({ project, screen, data }) {
           </span>
         </div>
         <div className="ig-dm-header-icons">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round">
-            <path d="M5.5 3.5 12 6l6.5-2.5v6L21 11v2l-2.5 1.5v6L12 18l-6.5 2.5v-6L3 13v-2l2.5-1.5v-6Z" />
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round">
+            <path d="M6.6 3.2c.5 0 .9.3 1.1.7l1.3 2.4c.2.5.2 1-.2 1.4l-1 1a13.5 13.5 0 0 0 5.5 5.5l1-1c.4-.4.9-.4 1.4-.2l2.4 1.3c.4.2.7.6.7 1.1v2.1c0 .9-.8 1.7-1.7 1.7A16.1 16.1 0 0 1 3.2 4.9c0-.9.8-1.7 1.7-1.7h1.7Z" />
           </svg>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2.8" y="6" width="13" height="12" rx="3" />

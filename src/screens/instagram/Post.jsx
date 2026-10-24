@@ -24,7 +24,7 @@ export default function InstagramPost({ project, screen, data }) {
             <Avatar src={author?.avatar} name={author?.name} size={31} />
           </IgStoryRing>
           <div className="ig-post-head-meta">
-            <IgVerifiedName name={author?.handle || 'username'} verified={author?.verified} dark={dark} />
+            <IgVerifiedName name={author?.handle || 'username'} verified={false} dark={dark} />
             {data.location ? <span className="ig-location">{data.location}</span> : null}
           </div>
           <span className="ig-post-more"><Icon.more size={20} /></span>

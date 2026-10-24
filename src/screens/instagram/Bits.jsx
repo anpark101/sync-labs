@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Icon } from '../ui.jsx'
+import { Avatar, Icon, Verified } from '../ui.jsx'
 import { cn } from '../../lib/util.js'
 
 export const IgWordmark = ({ dark = false }) => (
@@ -78,7 +78,7 @@ export const IgBottomNav = ({ active = 0, project, dark = false, profileAvatar }
 export const IgVerifiedName = ({ name, verified, dark, size = 13 }) => (
   <span className={cn('ig-username', dark && 'on-dark')} style={{ fontSize: size }}>
     {name}
-    {verified ? <span className="ig-verified">✓</span> : null}
+    {verified ? <Verified size={size + 1} color="#0095f6" /> : null}
   </span>
 )
 

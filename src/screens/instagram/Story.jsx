@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Icon, Img, mediaSrc } from '../ui.jsx'
+import { Avatar, Icon, Img, Verified, mediaSrc } from '../ui.jsx'
 import { castMapOf } from '../useTheme.js'
 import { cn } from '../../lib/util.js'
 
@@ -36,11 +36,11 @@ export default function InstagramStory({ project, screen, data }) {
 
         <div className="ig-story-top">
           <div className="ig-story-owner">
-            <Avatar src={author?.avatar} name={author?.name} size={33} ring />
+            <Avatar src={author?.avatar} name={author?.name} size={32} />
             <div className="ig-story-owner-meta">
               <span className="ig-story-owner-name">
                 {author?.handle || 'username'}
-                {author?.verified ? <span className="ig-verified">✓</span> : null}
+                {author?.verified ? <Verified size={13} color="#0095f6" /> : null}
                 <span className="ig-story-time">{data.time || '2h'}</span>
               </span>
               {data.location ? <span className="ig-story-loc">{data.location}</span> : null}

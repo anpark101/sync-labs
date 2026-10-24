@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStudioTheme, castMapOf } from '../useTheme.js'
 import { Avatar, Icon, Img, RichText, Verified, mediaSrc } from '../ui.jsx'
+import { TtComment, TtFriends, TtInbox, TtShare } from '../glyphs.jsx'
 import { cn, compact } from '../../lib/util.js'
 
 const TikTokNav = ({ avatar, name }) => (
@@ -10,10 +11,7 @@ const TikTokNav = ({ avatar, name }) => (
       <em>Home</em>
     </span>
     <span className="tt-nav-item">
-      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-        <circle cx="9" cy="8" r="3.4" /><path d="M2.8 20c.5-3.6 3-5.7 6.2-5.7s5.7 2.1 6.2 5.7" />
-        <path d="M16 5.2a3.4 3.4 0 0 1 0 5.6M18.5 14.6c1.6.8 2.5 2.6 2.8 5.4" />
-      </svg>
+      <TtFriends size={23} />
       <em>Friends</em>
     </span>
     <span className="tt-nav-create">
@@ -21,10 +19,7 @@ const TikTokNav = ({ avatar, name }) => (
       <span />
     </span>
     <span className="tt-nav-item">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
-        <path d="M4 5h16v12H8l-4 4V5Z" />
-        <path d="M8 9h8M8 13h5" strokeLinecap="round" />
-      </svg>
+      <TtInbox size={23} />
       <em>Inbox</em>
     </span>
     <span className="tt-nav-item">
@@ -69,12 +64,7 @@ export default function TikTokVideo({ project, screen, data }) {
           <em>{compact(data.likes)}</em>
         </div>
         <div className="tt-rail-item">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-            <path d="M21 11.3a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-3.7-.8L3 20.5l1.7-4.7A8.3 8.3 0 0 1 3.6 11a8.4 8.4 0 0 1 8.6-8.2A8.4 8.4 0 0 1 21 11.3Z" />
-            <circle cx="8.5" cy="11.5" r="1.2" fill="#000" opacity=".65" />
-            <circle cx="12" cy="11.5" r="1.2" fill="#000" opacity=".65" />
-            <circle cx="15.5" cy="11.5" r="1.2" fill="#000" opacity=".65" />
-          </svg>
+          <TtComment size={32} color="#fff" />
           <em>{compact(data.comments)}</em>
         </div>
         <div className="tt-rail-item">
@@ -82,7 +72,7 @@ export default function TikTokVideo({ project, screen, data }) {
           <em>{compact(data.saves)}</em>
         </div>
         <div className="tt-rail-item">
-          <Icon.share size={29} color="#fff" />
+          <TtShare size={30} color="#fff" />
           <em>{compact(data.shares)}</em>
         </div>
         <div className="tt-disc">

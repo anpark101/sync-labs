@@ -1,0 +1,334 @@
+/* ============================================================
+   Fidelity layer
+   ------------------------------------------------------------
+   screens.css lays out the apps; this file pulls the chrome,
+   type and spacing onto the real apps' grids (390 × 844).
+   Loaded after screens.css, so it wins on equal specificity.
+   ============================================================ */
+
+/* ---------- device chrome ---------- */
+.status-bar {
+  height: 54px;
+  padding: 13px 26px 0 31px;
+  font-size: 16px;
+  font-weight: 590;
+  letter-spacing: -0.34px;
+  align-items: flex-start;
+}
+.status-time { min-width: 44px; line-height: 21px; }
+.status-icons { gap: 6px; padding-top: 4px; }
+.dynamic-island { top: 11px; width: 125px; height: 37px; border-radius: 19px; }
+.dynamic-island i { right: 14px; top: 12px; width: 11px; height: 11px; }
+.home-indicator { width: 139px; height: 5px; border-radius: 3px; bottom: 8px; }
+
+/* ---------- iMessage ---------- */
+.im-app { --im-out: #0b84ff; }
+.im-app.is-dark { --im-out: #0b84ff; --im-in: #26252a; }
+.im-header { height: 50px; padding: 0 8px; }
+.im-header-back { width: 64px; }
+.im-header-avatars { height: 33px; }
+.im-header-avatars .avatar { width: 33px !important; height: 33px !important; }
+.im-header-avatars.multi { width: 46px; }
+.im-header-name { font-size: 10.5px; font-weight: 500; letter-spacing: 0; }
+.im-header-facetime { width: 64px; }
+.im-thread { padding: 10px 14px 0; gap: 1px; }
+.im-day, .im-time-sep { font-size: 11.5px; font-weight: 600; color: var(--im-muted); letter-spacing: 0; }
+.im-day { margin: 6px 0 12px; }
+.im-day span { font-weight: 600; color: var(--im-muted); }
+.im-time-sep { margin: 10px 0 8px; }
+.im-row.first { margin-top: 9px; }
+.im-bubble {
+  font-size: 17px;
+  line-height: 1.29;
+  letter-spacing: -0.24px;
+  padding: 7px 13px 8px;
+  border-radius: 18.5px;
+  max-width: 71%;
+}
+.im-bubble.in { border-bottom-left-radius: 6px; }
+.im-bubble.out { border-bottom-right-radius: 6px; }
+.im-row:not(.last) .im-bubble.in { border-bottom-left-radius: 18.5px; }
+.im-row:not(.last) .im-bubble.out { border-bottom-right-radius: 18.5px; }
+.im-bubble.tail::after { width: 8px; height: 16px; }
+.im-bubble.in.tail::after { left: -7px; clip-path: path('M8 0 C8 8 5 13 0 16 L8 16 Z'); }
+.im-bubble.out.tail::after { right: -7px; clip-path: path('M0 0 C0 8 3 13 8 16 L0 16 Z'); }
+.im-sender { font-size: 11px; margin-left: 13px; margin-bottom: 2px; }
+.im-receipt { font-size: 11px; font-weight: 500; }
+.im-inputbar { height: 79px; padding: 8px 12px 0; gap: 9px; }
+.im-plus { margin-top: 1px; }
+.im-plus svg { width: 31px; height: 31px; }
+.im-input { height: 36px; border-radius: 18px; font-size: 16px; padding: 0 11px 0 12px; }
+.im-audio { min-width: 196px; }
+.im-emoji { font-size: 48px; }
+
+/* ---------- Instagram ---------- */
+.ig-wordmark { font-size: 29px; letter-spacing: 0; }
+.ig-topbar { height: 44px; padding: 0 14px; }
+.ig-topbar-icons { gap: 20px; }
+.ig-post-head { height: 54px; padding: 0 12px; gap: 10px; }
+.ig-ring { padding: 0; background: none; }
+.ig-ring > .avatar { width: 32px !important; height: 32px !important; border: none; }
+.ig-post-head .ig-username { font-size: 13.5px; font-weight: 600; letter-spacing: -0.05px; }
+.ig-location { font-size: 11.5px; }
+.ig-likes { font-size: 13.5px; font-weight: 600; padding-top: 2px; }
+.ig-caption { font-size: 14px; line-height: 1.34; padding-top: 4px; }
+.ig-caption .ig-username, .ig-comment-text b { font-weight: 600; }
+.ig-likedby, .ig-viewcomments { font-size: 13.5px; }
+.ig-comment { font-size: 13.5px; line-height: 1.35; padding-top: 4px; }
+.ig-comment-like { font-size: 11.5px; margin-top: 6px; }
+.ig-time { font-size: 10px; letter-spacing: 0.2px; text-transform: uppercase; padding-top: 8px; }
+.ig-actions { height: 44px; padding: 0 14px; }
+.ig-actions-left { gap: 17px; }
+.ig-comment-bar { height: 53px; padding: 0 14px; }
+.ig-comment-placeholder { font-size: 13.5px; }
+.ig-nav { height: 83px; padding: 7px 10px 0; align-items: flex-start; }
+.ig-nav-icon, .ig-nav-avatar { height: 34px; }
+.ig-nav-avatar .avatar { width: 25px !important; height: 25px !important; }
+.ig-story-ui { padding: 59px 12px 22px; }
+.ig-story-progress { height: 2.5px; gap: 4px; margin-bottom: 11px; }
+.ig-story-owner .avatar { width: 32px !important; height: 32px !important; border: none !important; }
+.ig-story-owner-name { font-size: 14px; font-weight: 600; }
+.ig-story-owner-name .ig-verified { font-size: 12px; color: #0095f6 !important; }
+.ig-story-time { font-size: 14px; font-weight: 400; opacity: 0.72; margin-left: 7px; }
+.ig-story-controls { gap: 16px; }
+.ig-story-reply { height: 46px; border-radius: 23px; }
+.ig-story-footer { gap: 16px; padding: 8px 2px 6px; }
+.ig-profile-topbar { height: 44px; padding: 0 16px; gap: 12px; }
+.ig-profile-title { font-size: 16px; font-weight: 700; gap: 5px; }
+.ig-profile-header { padding: 6px 16px 2px; gap: 22px; }
+.ig-profile-header .ig-profile-avatar-ring .avatar { width: 84px !important; height: 84px !important; }
+.ig-profile-stats b { font-size: 16px; }
+.ig-profile-stats em { font-size: 12.5px; color: var(--fg); }
+.ig-profile-name { padding: 10px 16px 0; font-size: 14px; }
+.ig-profile-bio { padding-top: 2px; font-size: 14px; line-height: 1.36; }
+.ig-profile-link { font-size: 13.5px; }
+.ig-profile-buttons { padding: 12px 16px 0; gap: 7px; }
+.ig-profile-btn { height: 33px; border-radius: 8px; font-size: 13.5px; }
+.ig-profile-tabs { height: 44px; margin-top: 7px; }
+.ig-grid { gap: 2px; }
+.ig-dm-header { height: 60px; padding: 0 12px; gap: 4px; }
+.ig-dm-name { font-size: 15px; }
+.ig-dm-thread { padding: 10px 12px 2px; }
+.ig-dm-bubble { font-size: 16px; padding: 9px 14px; border-radius: 20px; }
+.ig-dm-inputbar { height: 78px; padding: 9px 12px 0; }
+.ig-dm-input { height: 38px; border-radius: 19px; font-size: 14px; }
+
+/* ---------- X ---------- */
+.x-app { font-family: 'Chirp', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Inter Variable', sans-serif; }
+.x-topbar { height: 53px; padding: 0 16px; }
+.x-topbar-title { font-size: 17px; font-weight: 700; letter-spacing: 0; }
+.x-topbar-left, .x-topbar-right { width: 56px; }
+.x-detail { padding: 12px 16px 0; }
+.x-detail-row { gap: 12px; }
+.x-name { font-size: 15px; }
+.x-name b { font-weight: 700; }
+.x-handle { font-size: 15px; }
+.x-detail-author .x-handle { font-size: 15px; }
+.x-detail-text { font-size: 17px; line-height: 1.38; letter-spacing: -0.01em; margin-top: 2px; }
+.x-detail-meta { font-size: 15px; color: var(--muted); margin-top: 12px; }
+.x-detail-stats { display: none !important; }
+.x-detail-actions {
+  margin: 12px -4px 0;
+  padding: 10px 4px;
+  border-top: 0.5px solid var(--line);
+  border-bottom: 0.5px solid var(--line);
+}
+.x-actions { font-size: 13px; padding-right: 8px; }
+.x-actions .x-action { font-size: 13px; gap: 5px; }
+.x-actions .x-action em { font-style: normal; font-size: 13px; }
+.x-reply { padding: 12px 16px; gap: 12px; }
+.x-reply > .avatar { width: 40px !important; height: 40px !important; }
+.x-reply p { font-size: 15px; line-height: 1.35; margin-top: 1px; }
+.x-reply-actions { font-size: 13px; }
+.x-banner { height: 130px; }
+.x-profile-avatar-row { margin-top: -44px; }
+.x-profile-avatar .avatar { width: 84px !important; height: 84px !important; border-width: 4px !important; }
+.x-profile-name { font-size: 20px; font-weight: 800; }
+.x-profile-handle { font-size: 15px; }
+.x-profile-bio { font-size: 15px; line-height: 1.36; }
+.x-profile-meta { font-size: 15px; }
+.x-profile-counts { font-size: 15px; }
+.x-profile-tabs { height: 53px; }
+.x-profile-tabs span { font-size: 15px; padding: 15px 0 14px; }
+.x-nav { height: 83px; padding: 8px 14px 0; align-items: flex-start; }
+.x-nav-item { height: 32px; }
+
+/* ---------- TikTok ---------- */
+.tt-top { top: 58px; }
+.tt-top-tabs { font-size: 17px; font-weight: 600; gap: 20px; }
+.tt-top-tabs span.active::after { left: 15%; right: 15%; bottom: -6px; height: 3px; border-radius: 2px; }
+.tt-rail { right: 8px; bottom: 168px; gap: 18px; }
+.tt-rail-avatar .avatar { width: 48px !important; height: 48px !important; }
+.tt-rail-item em { font-size: 13px; font-weight: 600; }
+.tt-bottom { left: 12px; right: 74px; bottom: 96px; gap: 6px; }
+.tt-author { font-size: 17px; font-weight: 700; }
+.tt-caption { font-size: 15px; line-height: 1.32; }
+.tt-music { font-size: 15px; }
+.tt-nav { height: 83px; padding: 7px 8px 0; }
+.tt-nav-item em { font-size: 10px; }
+.tt-profile-avatar-wrap .avatar { width: 96px !important; height: 96px !important; }
+.tt-profile-name { font-size: 18px; }
+.tt-profile-stats b { font-size: 16px; }
+.tt-profile-bio { font-size: 14px; }
+.tt-profile-tabs { height: 44px; }
+.tt-profile-tabs span { font-size: 14px; padding: 11px 4px 12px; }
+.tt-profile-nav { height: 83px; padding: 7px 8px 0; }
+
+/* ---------- WhatsApp ---------- */
+.wa-header { height: 59px; padding: 0 8px 0 4px; gap: 6px; }
+.wa-head-avatar .avatar { width: 36px !important; height: 36px !important; }
+.wa-head-name { font-size: 17px; }
+.wa-head-sub { font-size: 13px; }
+.wa-head-icons { gap: 20px; }
+.wa-thread { padding: 8px 10px 4px; gap: 2px; }
+.wa-bubble { font-size: 16.5px; line-height: 1.29; padding: 6px 9px 15px; border-radius: 8px; }
+.wa-meta { font-size: 11px; right: 8px; bottom: 4px; }
+.wa-encrypt { font-size: 12.5px; line-height: 1.32; border-radius: 8px; padding: 7px 10px; margin: 2px 10px 10px; }
+.wa-day span { font-size: 11px; padding: 4px 11px; border-radius: 8px; }
+.wa-inputbar { height: 62px; padding: 7px 8px 0; gap: 7px; }
+.wa-input { height: 37px; border-radius: 19px; font-size: 16px; }
+.wa-emoji { margin-top: 4px; }
+.wa-mic { width: 37px; height: 37px; }
+.wa-input-icons { gap: 12px; }
+
+/* ---------- Discord ---------- */
+.dc-app { font-family: 'gg sans', 'Whitney', -apple-system, 'Inter Variable', sans-serif; }
+.dc-header { height: 49px; }
+.dc-thread { padding: 10px 14px 4px; }
+.dc-message { gap: 12px; margin-top: 12px; }
+.dc-avatar .avatar { width: 40px !important; height: 40px !important; }
+.dc-avatar-spacer { width: 40px; }
+.dc-author { font-size: 16px; font-weight: 600; }
+.dc-text { font-size: 16px; line-height: 1.375; }
+.dc-time { font-size: 11px; }
+.dc-inputbar { height: 74px; padding: 8px 14px 0; }
+.dc-input { height: 44px; border-radius: 8px; font-size: 15px; }
+.dc-channel-start h4 { font-size: 26px; }
+.dc-channel-start p { font-size: 14px; }
+
+/* ---------- Snapchat ---------- */
+.sc-app { font-family: 'Avenir Next', -apple-system, 'Inter Variable', sans-serif; }
+.sc-header { height: 52px; }
+.sc-name { font-size: 16px; font-weight: 600; }
+.sc-bubble { font-size: 16px; line-height: 1.3; border-radius: 18px; padding: 8px 13px 16px; }
+.sc-inputbar { height: 74px; padding: 8px 12px 0; }
+.sc-input { height: 40px; border-radius: 20px; font-size: 14px; }
+.sc-cam-btn, .sc-send { width: 40px; height: 40px; }
+
+/* ---------- Spotify ---------- */
+.sp-app { font-family: 'Circular Std', 'Circular', -apple-system, 'Inter Variable', sans-serif; }
+.sp-header { height: 54px; padding: 0 20px; }
+.sp-context span { font-size: 10px; letter-spacing: 0.1em; }
+.sp-context b { font-size: 12px; }
+.sp-body { padding: 8px 24px 0; }
+.sp-art { border-radius: 8px; }
+.sp-track-row { margin-top: 24px; }
+.sp-title { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+.sp-artist { font-size: 16px; }
+.sp-times { font-size: 12px; }
+.sp-controls { margin-top: 18px; }
+.sp-play { width: 66px; height: 66px; }
+.sp-ctrl.small { color: rgba(255, 255, 255, 0.78); }
+.sp-bottom-icons { padding: 12px 6px 0; }
+.sp-nav { display: none !important; }
+
+/* ---------- YouTube ---------- */
+.yt-app { font-family: 'Roboto', 'Inter Variable', -apple-system, sans-serif; }
+.yt-player { height: 219px; }
+.yt-title { font-size: 16px; line-height: 1.28; font-weight: 500; }
+.yt-meta { font-size: 13px; }
+.yt-chip { height: 33px; border-radius: 17px; font-size: 14px; }
+.yt-channel-meta b { font-size: 15px; font-weight: 500; }
+.yt-channel-meta span { font-size: 12px; }
+.yt-subscribe, .yt-join { height: 32px; border-radius: 16px; font-size: 13px; }
+.yt-comments-head b { font-size: 15px; }
+.yt-comment p { font-size: 13px; line-height: 1.4; }
+.yt-nav { height: 83px; padding: 7px 8px 0; }
+.yt-nav em { font-size: 10px; }
+
+/* ---------- Reddit ---------- */
+.rd-app { font-family: 'Reddit Sans', -apple-system, 'Inter Variable', sans-serif; }
+.rd-topbar { height: 48px; }
+.rd-title { font-size: 22px; line-height: 1.24; }
+.rd-body { font-size: 15px; line-height: 1.45; }
+.rd-nav { height: 83px; padding: 7px 8px 0; }
+
+/* ---------- second pass: chrome + spacing ---------- */
+.ig-wordmark { -webkit-text-stroke: 0.3px currentColor; }
+
+.tt-rail { bottom: 152px; gap: 16px; }
+.tt-rail-avatar .avatar, .tt-rail-avatar .avatar-ring {
+  box-shadow: 0 0 0 2px #fff !important;
+  border: 0 !important;
+}
+.tt-follow-badge { width: 21px; height: 21px; line-height: 19px; font-size: 15px; }
+.tt-disc { width: 46px; height: 46px; }
+.tt-nav { background: #000; -webkit-backdrop-filter: none; backdrop-filter: none; border-top: 0; }
+.tt-nav-create { margin-top: 2px; }
+
+.yt-app { padding-top: 54px; }
+.yt-player { height: 219px; }
+.yt-player-top { top: 11px; }
+.yt-player-controls { bottom: 12px; }
+.yt-chips { overflow: hidden; padding-right: 10px; }
+.yt-chip { height: 32px; font-size: 13.5px; padding: 0 12px; }
+.yt-chip b { font-size: 13.5px; }
+
+.x-reply-actions { gap: 26px; }
+
+.sp-bottom-icons { margin-top: auto; padding: 14px 6px 40px; }
+
+/* ---------- third pass ---------- */
+.lock-content { padding-top: 66px; }
+.lock-date { margin-top: 14px; font-size: 17px; }
+.lock-clock { font-size: 88px; line-height: 0.94; letter-spacing: -3px; }
+.lock-widgets { margin-top: 12px; font-size: 12.5px; gap: 20px; }
+.lock-notifications { margin-top: 30px; gap: 9px; }
+.lock-notif { border-radius: 22px; padding: 11px 13px 12px; }
+.lock-notif-app { font-size: 10px; letter-spacing: 0.06em; }
+.lock-notif-title { font-size: 14px; }
+.lock-notif-body { font-size: 13.5px; }
+
+/* X profile: banner scrolls with the page, content keeps its gutters */
+.x-profile-scroll { padding: 0; }
+.x-profile-floatingbar { top: 10px; }
+.x-profile-avatar-row { padding: 0 16px; }
+.x-profile-name, .x-profile-handle, .x-profile-bio, .x-profile-meta, .x-profile-counts { padding-left: 16px; padding-right: 16px; }
+.x-profile-post { padding: 12px 16px; }
+.x-profile-tabs span { font-weight: 600; }
+.x-profile-avatar-row { align-items: flex-end; }
+
+/* ---------- fourth pass ---------- */
+.wa-wallpaper::before { background-size: 104px 104px; opacity: 0.55; }
+.wa-app.is-dark .wa-wallpaper::before { opacity: 0.28; }
+.wa-encrypt svg { vertical-align: -2px; margin-right: 4px; }
+.wa-back svg { width: 22px; height: 22px; }
+.wa-bubble::before { opacity: 0.92; }
+
+.x-thread-line { width: 2px; background: #3a3f45; }
+.x-thread { padding: 8px 16px 0; }
+.x-thread-text { font-size: 15px; line-height: 1.35; }
+.x-thread-meta { font-size: 13px; }
+.x-thread-actions { font-size: 13px; gap: 0; }
+
+.ig-dm-header .avatar { width: 30px !important; height: 30px !important; }
+.ig-dm-header-icons { gap: 16px; }
+.ig-dm-name em { font-size: 12px; }
+.ig-dm-bubble.in { background: #efefef; }
+.ig-dm-bubble.out { background: linear-gradient(135deg, #6a5cff 0%, #4f9bf0 55%, #3797f0 100%); }
+
+.sc-streak { bottom: -9px; font-size: 8px; padding: 0 3px; }
+.sc-header { padding: 0 14px; }
+
+/* ---------- fifth pass: thread anchoring + small chrome ---------- */
+.wa-thread { justify-content: flex-start; }
+.dc-thread { justify-content: flex-start; }
+.ig-dm-thread { justify-content: flex-start; }
+.dc-channel-start { padding-top: 8px; }
+
+.ig-dm-bubble.out { background: linear-gradient(180deg, #4f9bf0 0%, #3797f0 100%); }
+.sc-head-user .sc-streak { display: none; }
+
+.wa-row.first .wa-bubble::before { display: block; }
+.ig-story-owner-name .verified { margin-left: 4px; }
+.ig-story-owner-name .verified path:first-child { fill: #0095f6; }

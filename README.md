@@ -97,6 +97,11 @@ React 19 + Vite 8, React Router (hash routing so it works from any static host),
 `html-to-image` for pixel-exact export, `jszip` for archives, `simple-icons` for brand marks,
 `vite-plugin-pwa` for offline/installable support. The 390×844 artboard is the single export unit.
 
+Screen chrome is built to the real apps' grids: SF-metric status bars, Dynamic Island, 17px iMessage
+bubbles with tails, Instagram's 32px avatars and 44px action rows, X's inline action row, Roboto for
+YouTube. `src/screens/glyphs.jsx` holds the platform glyphs; `src/styles/fidelity.css` is the layer
+that pins metrics and type stacks onto the base styles.
+
 ```
 src/
   components/   shell, nav, modal, toasts, menus
@@ -104,6 +109,12 @@ src/
   editor/       form fields + one form per screen type
   lib/          storage (IndexedDB), store, schema, media, exporter
   pages/        home, templates, workspace, screen editor, reader, export, settings, guide
-  screens/      the platform renderers (one file per platform)
-  styles/       base design system, artboard styles, studio styles
+  screens/      the platform renderers (one file per platform), glyphs.jsx
+  styles/       base design system, artboard styles, studio styles, fidelity layer
+  dev/          Gallery.jsx — renders every screen type at 1:1 for visual QA
 ```
+
+### Looking at the screens
+
+`gallery.html` (dev only, not in the production build) renders all 17 screen types at 390×844:
+`npm run dev` then open `http://localhost:5173/gallery.html`.

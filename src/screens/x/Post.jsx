@@ -13,7 +13,7 @@ export default function XPost({ project, screen, data }) {
 
   return (
     <div className={cn('app x-app', dark && 'is-dark')}>
-      <XTopBar title="Post" back right="more" />
+      <XTopBar title="Post" back />
       <div className="x-scroll">
         <article className="x-detail">
           <div className="x-detail-row">
@@ -48,12 +48,6 @@ export default function XPost({ project, screen, data }) {
                 <b>{compact(data.views)}</b> <span className="x-dim">Views</span>
               </div>
             </div>
-          </div>
-          <div className="x-detail-stats">
-            <span><b>{formatCount(data.reposts || 0)}</b> <em>Reposts</em></span>
-            <span><b>{formatCount(Math.round((data.likes || 0) * 1.18))}</b> <em>Quotes</em></span>
-            <span><b>{formatCount(data.likes || 0)}</b> <em>Likes</em></span>
-            <span><b>{formatCount(data.bookmarks || Math.round((data.likes || 0) * 0.2))}</b> <em>Bookmarks</em></span>
           </div>
           <div className="x-detail-actions">
             <XActions data={data} />
