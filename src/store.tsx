@@ -111,16 +111,19 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       if (next.projects.length === 0 && next.characters.length === 0) {
         next = { ...next, characters: defaultCharacters() };
       }
-      // fetch cloud
+      // fetch cloud (with hard timeout so the app always boots, even offline)
       let cloud: AppState | null = null;
       try {
-        const res = await fetch('/api/state');
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch('/api/state', { signal: controller.signal });
+        clearTimeout(timer);
         if (res.ok) {
           const json = await res.json();
           if (json?.ok && json.state) cloud = json.state;
         }
       } catch {
-        /* offline */
+        /* offline or timed out — local copy is enough */
       }
       if (cancelled) return;
       if (cloud) {
