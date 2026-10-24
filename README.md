@@ -2,6 +2,8 @@
 
 **Write it like it happened.**
 
+![Elsewhere — write it like it happened](public/og.png)
+
 Elsewhere is a private studio for making **social media AUs** — fictional stories told entirely
 through the things people post, text and delete. Build fake iMessage threads, Instagram posts and
 profiles, X posts and threads, TikTok videos, WhatsApp and Discord chats, Snapchat, Spotify,
@@ -14,7 +16,7 @@ autosaves to your device as you type, and one tap makes a full backup file.
 
 ## Open it
 
-- **Live app:** https://anpark101.github.io/for-au/
+- **Live app:** https://anpark101.github.io/for-au/ — served by GitHub Pages from `main`.
   Add it to your phone's home screen (Share → *Add to Home Screen*) and it behaves like an app: it
   opens full screen and works offline once loaded.
 - **Run it yourself:**
@@ -24,6 +26,17 @@ autosaves to your device as you type, and one tap makes a full backup file.
   npm run dev      # http://localhost:5173
   npm run build    # production build in dist/
   ```
+
+### Publishing
+
+Pages only serves the **default branch**, so the app goes live in two steps:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions** (one time).
+2. Merge this branch into `main`. `.github/workflows/deploy-pages.yml` rebuilds on every push to
+   `main` and publishes `dist/` to https://anpark101.github.io/for-au/.
+
+If Pages is still switched off, the workflow stops after a successful build and leaves a notice in
+the run summary instead of failing silently.
 
 ---
 
