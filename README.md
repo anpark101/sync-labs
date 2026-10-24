@@ -29,14 +29,12 @@ autosaves to your device as you type, and one tap makes a full backup file.
 
 ### Publishing
 
-Pages only serves the **default branch**, so the app goes live in two steps:
+Live at https://anpark101.github.io/for-au/ — GitHub Pages, source **GitHub Actions**. Every push to
+`main` runs `.github/workflows/deploy-pages.yml`, which builds `dist/` and publishes it.
 
-1. **Settings → Pages → Build and deployment → Source: GitHub Actions** (one time).
-2. Merge this branch into `main`. `.github/workflows/deploy-pages.yml` rebuilds on every push to
-   `main` and publishes `dist/` to https://anpark101.github.io/for-au/.
-
-If Pages is still switched off, the workflow stops after a successful build and leaves a notice in
-the run summary instead of failing silently.
+Setting up a fork? Pick **Settings → Pages → Build and deployment → Source: GitHub Actions**, then
+push to `main`. If Pages is off, the workflow still builds green and leaves a notice in the run
+summary instead of failing on a missing site.
 
 ---
 
