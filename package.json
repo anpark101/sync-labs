@@ -1,0 +1,27 @@
+{
+  "name": "auverse-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AUverse Studio - build social media AUs (fictional) with realistic platform mocks, local + cloud saving",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "html-to-image": "^1.11.13",
+    "idb-keyval": "^6.2.1",
+    "jszip": "^3.10.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}
