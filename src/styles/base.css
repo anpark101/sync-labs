@@ -528,8 +528,12 @@ main { flex: 1; }
   .field-row, .field-row.three { grid-template-columns: 1fr; }
   .segmented { width: 100%; }
   .backup-copy h2 { font-size: 30px; }
-  .save-pill { padding: 0 8px; }
-  .save-pill .save-label { display: none; }
+  .save-pill {
+    width: 26px; height: 26px; padding: 0; justify-content: center;
+    border-color: transparent; background: transparent;
+  }
+  .save-pill .save-label, .save-pill .tiny { display: none; }
+  .save-pill .save-dot { width: 7px; height: 7px; }
   .header-nav { gap: 0; }
   .header-actions { gap: 6px; margin-left: 0; }
   .header-actions .btn-primary { width: 34px; height: 34px; padding: 0; justify-content: center; }

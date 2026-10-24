@@ -523,7 +523,7 @@ export default function Workspace() {
                           <BrandIcon name={platform.id} size={11} color={platform.id === 'x' ? '#fff' : platform.tint} />
                           {platform.name}
                         </span>
-                        {isCover ? <span className="screen-thumb-cover"><Star size={10} /> Cover</span> : null}
+                        {isCover ? <span className="screen-thumb-cover" title="Cover screen"><Star size={10} /> <em>Cover</em></span> : null}
                         <div className="mini-phone screen-mini" aria-hidden="true">
                           <PhoneArtboard project={project} screen={s} exportMode />
                         </div>
