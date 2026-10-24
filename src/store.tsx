@@ -5,6 +5,16 @@ import { uid } from './util';
 
 const IDB_KEY = 'auverse-state';
 
+/**
+ * API base for cloud sync.
+ * - Web (served by the studio server): same origin → '' (relative URLs).
+ * - APK build: the app is served from the WebView's local origin, so the
+ *   cloud server must be an absolute URL (baked in at build time).
+ */
+export const API_BASE: string =
+  (import.meta.env.VITE_API_BASE as string | undefined) ?? '';
+const apiUrl = (path: string): string => `${API_BASE}${path}`;
+
 const emptyState = (): AppState => ({ v: 1, updatedAt: 0, projects: [], characters: [] });
 
 function defaultCharacters(): Character[] {
@@ -116,7 +126,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), 8000);
-        const res = await fetch('/api/state', { signal: controller.signal });
+        const res = await fetch(apiUrl('/api/state'), { signal: controller.signal });
         clearTimeout(timer);
         if (res.ok) {
           const json = await res.json();
@@ -157,7 +167,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     setSync('syncing');
     debounceRef.current = setTimeout(async () => {
       try {
-        const res = await fetch('/api/state', {
+        const res = await fetch(apiUrl('/api/state'), {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ state: stateRef.current }),
